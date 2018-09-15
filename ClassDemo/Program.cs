@@ -17,7 +17,7 @@ namespace ClassDemo
             {
                 return hWorked;
             }
-         private set
+          set
             {
                 if (value > 0)
                     hWorked = value;
@@ -63,14 +63,14 @@ namespace ClassDemo
         public Staff(string name)
         {
             nameOfStaff = name;
-            Console.WriteLine("/n" + nameOfStaff);
+            Console.WriteLine("\n" + nameOfStaff);
             Console.WriteLine("----------------------------");
         }
         //constructor with two parameters
         public Staff(string firstName, string lastName)
         {
-            nameOfStaff = firstName + "" + lastName;
-            Console.WriteLine("n/" + nameOfStaff);
+            nameOfStaff = firstName + " " + lastName;
+            Console.WriteLine("\n" + nameOfStaff);
             Console.WriteLine("--------------------------------");
         }
     }
@@ -78,7 +78,14 @@ namespace ClassDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int pay;
+            Staff staff1 = new Staff("Peter");
+            staff1.HoursWorked = 160;
+            pay = staff1.CalculatePay(1000, 400);
+            Console.WriteLine("Pay = {0}", pay);
+
+            Console.Read();
+
         }
     }
 }
